@@ -79,7 +79,7 @@
                 }
             },
             getUploadUrl: function () {
-                return "http://localhost:18080/api/v1/file/upload"
+                return "http://localhost:18080/api/v1/image/import/normal"
             },
         },
         data() {

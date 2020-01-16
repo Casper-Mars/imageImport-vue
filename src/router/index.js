@@ -4,6 +4,7 @@ import NormalImage from "@/views/NormalImage"
 import SpecImage from "@/views/SpecImage"
 import Home from "@/views/Home";
 import UploadFile from "@/views/UploadFile";
+import SpyImage from "@/views/SpyImage";
 
 Vue.use(VueRouter)
 
@@ -27,7 +28,12 @@ const routes = [
         path: '/uploadFile',
         name: 'uploadFile',
         component: UploadFile
-    }
+    },
+    {
+        path: '/spyImage',
+        name: 'spyImage',
+        component: SpyImage
+    },
 ]
 
 const router = new VueRouter({

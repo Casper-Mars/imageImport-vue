@@ -10,6 +10,11 @@
                 导入规格图片
             </el-button>
         </el-row>
+        <el-row>
+            <el-button @click="toSpyImage">
+                爬取图片
+            </el-button>
+        </el-row>
     </div>
 </template>
 
@@ -22,6 +27,9 @@
             },
             toSpecImport: function () {
                 this.$router.push("specImage")
+            },
+            toSpyImage: function () {
+                this.$router.push("spyImage")
             }
         }
     }
@@ -38,5 +46,8 @@
                 color: #42b983;
             }
         }
+    }
+    .el-row {
+        padding: 10px;
     }
 </style>
