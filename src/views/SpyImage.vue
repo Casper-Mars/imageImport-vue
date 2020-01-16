@@ -61,27 +61,9 @@
                     }
                 )
             },
-            download: function () {
-                this.$api.get(
-                    "/v1/image/import/spy/download",
-                    {
-                        "filename": this.filename
-                    },
-                    null,
-                    (data) => {
-                        console.log(data);
-                        if (data.code === "200") {
-                            this.filename = data.data
-                        }
-                    },
-                    (error) => {
-                        console.log(error)
-                    }
-                )
-            },
             handleExport() {
                 var elemIF = document.createElement('iframe')
-                elemIF.src = 'http://localhost:18080/api/v1/image/import/spy/download?filename=' + this.filename
+                elemIF.src = 'v1/image/import/spy/download?filename=' + this.filename
                 elemIF.style.display = 'none'
                 document.body.appendChild(elemIF)
             },
