@@ -8,9 +8,9 @@
                 </el-row>
                 <el-row>
                     <el-button type="primary" @click="submitSpy">开始爬取</el-button>
-<!--                    <el-button size="mini" class="filter-item" type="primary" icon="el-icon-download"-->
-<!--                               @click="handleExport()">下载-->
-<!--                    </el-button>-->
+                    <el-button class="filter-item" type="primary" icon="el-icon-download"
+                               @click="handleExport()" :disabled="enableDownload">下载
+                    </el-button>
                     <!--                    <el-button type="primary" @click="download">下载</el-button>-->
                 </el-row>
             </el-main>
@@ -24,7 +24,8 @@
         data() {
             return {
                 url: "",
-                filename: ""
+                filename: "",
+                enableDownload: true
             }
         },
         methods: {
@@ -47,9 +48,12 @@
                     (data) => {
                         console.log(data);
                         if (data.code === "200") {
-                            this.filename = data.data
-                            loading.close();
-                            this.handleExport();
+                            this.filename = data.data;
+                            this.enableDownload = false;
+                            setTimeout(() => {
+                                loading.close();
+                                this.handleExport();
+                            }, 2000);
                         }
                     },
                     (error) => {

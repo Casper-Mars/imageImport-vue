@@ -16,7 +16,7 @@ module.exports = {
         }
 
     },
-    outputDir: '/home/casper/projects/idea/importimage/src/main/resources/static',
+    outputDir: '/home/casper/projects/importImage/imageImport/src/main/resources/static',
     publicPath: process.env.NODE_ENV === 'production' ? '/api' : '/',
 
     pwa: {
